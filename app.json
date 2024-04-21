@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "timer-free-app",
+    "slug": "timer-free-app",
+    "version": "1.0.0",
+    "orientation": "landscape",
+    "icon": "./assets/timerApp.jpg",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/timerApp.jpg",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "fonts": [
+      {
+        "family": "DSEG14Classic-Regular",
+        "file": "./assets/fonts/DSEG14Classic-Regular.ttf"
+      }
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/timerApp.jpg",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.raphaelTaglialegna.simpleTimerFreeApp"
+    },
+    "web": {
+      "favicon": "./assets/timerApp.jpg"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "09562dec-cac2-4433-a095-51aac5e583e6"
+      }
+    }
+  }
+}
