@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, TouchableHighlight, StyleSheet } from "react-native";
+import { View, Text, TouchableHighlight } from "react-native";
 import { Stopwatch } from "react-native-stopwatch-timer";
-import { timerOptions, timerStyles } from "../styles";
+import { timerStyles } from "../styles";
+import KeepAwake from "react-native-keep-awake";
 
 const StopwatchComponent = () => {
   const [isStopwatchStart, setIsStopwatchStart] = useState(false);
@@ -39,6 +40,7 @@ const StopwatchComponent = () => {
           <Text style={timerStyles.buttonText}>RESET</Text>
         </TouchableHighlight>
       </View>
+      <KeepAwake />
     </View>
   );
 };

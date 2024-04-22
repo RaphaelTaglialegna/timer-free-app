@@ -3,6 +3,7 @@ import { View, Text, TouchableHighlight } from "react-native";
 import { timerStyles } from "../styles";
 import { Audio } from "expo-av";
 import TimerDisplay from "./TimerDisplay";
+import KeepAwake from "react-native-keep-awake";
 
 const TimerComponent = ({ resetTimmerComponent }) => {
   const [timerDuration, setTimerDuration] = useState(0);
@@ -96,6 +97,7 @@ const TimerComponent = ({ resetTimmerComponent }) => {
           <Text style={timerStyles.buttonText}>RESET</Text>
         </TouchableHighlight>
       </View>
+      <KeepAwake />
     </View>
   );
 };

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Text, View } from "react-native";
 import { timerStyles, timerOptions } from "../styles";
 import { Timer } from "react-native-stopwatch-timer";
-import ScrollPicker from "react-native-wheel-scrollview-picker";
+import ScrollPicker from "react-native-picker-scrollview";
 
 const TimerDisplay = ({
   isTimerStart,
@@ -58,10 +58,7 @@ const TimerDisplay = ({
               onValueChange={(data) => handlePickerChange(data, unit)}
               wrapperHeight={heightPicker}
               itemHeight={heightPicker}
-              highlightColor="#000000"
               wrapperColor="#000000"
-              wrapperBackground="#000000"
-              highlightBorderWidth={2}
             />
             {unit !== "seconds" && <Text style={timerStyles.colon}>:</Text>}
           </React.Fragment>

@@ -17,13 +17,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.73.6",
+    "react-native-keep-awake": "^4.0.0",
     "react-native-picker-scrollview": "^1.0.1",
-    "react-native-picker-select": "^9.1.3",
     "react-native-sound": "^0.11.2",
     "react-native-stopwatch-timer": "^0.0.21",
-    "react-native-web": "~0.19.6",
-    "react-native-wheel-picker": "^1.2.0",
-    "react-native-wheel-scrollview-picker": "^2.0.4"
+    "react-native-web": "~0.19.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
