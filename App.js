@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { useFonts } from "expo-font";
-import {
-  SafeAreaView,
-  StatusBar,
-  Text,
-  TouchableHighlight,
-  View,
-} from "react-native";
+import { SafeAreaView, StatusBar, Text, View } from "react-native";
 import TimerComponent from "./src/Timer";
 import StopwatchComponent from "./src/Stopwatch";
 import { styles } from "./styles";
@@ -46,20 +40,20 @@ const App = () => {
 
       <SafeAreaView style={styles.container}>
         <View style={styles.navigation}>
-          <TouchableHighlight
+          {/* <TouchableHighlight
             style={isTimerVisible ? styles.activeButton : styles.inactiveButton}
             onPress={() => toggleComponent("timer")}
           >
             <Text style={styles.buttonText}>TIMER</Text>
-          </TouchableHighlight>
-          <TouchableHighlight
+          </TouchableHighlight> */}
+          {/* <TouchableHighlight
             style={
               isStopwatchVisible ? styles.activeButton : styles.inactiveButton
             }
             onPress={() => toggleComponent("stopwatch")}
           >
             <Text style={styles.buttonText}>CRONOMETER</Text>
-          </TouchableHighlight>
+          </TouchableHighlight> */}
         </View>
         {isTimerVisible && (
           <TimerComponent resetTimmerComponent={resetTimmerComponent} />

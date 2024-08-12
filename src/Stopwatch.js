@@ -13,6 +13,7 @@ const StopwatchComponent = () => {
       <Stopwatch
         laps
         msecs
+        hours={false}
         start={isStopwatchStart}
         reset={resetStopwatch}
         options={stopwatchOptions}
@@ -40,7 +41,7 @@ const StopwatchComponent = () => {
           <Text style={timerStyles.buttonText}>RESET</Text>
         </TouchableHighlight>
       </View>
-      <KeepAwake />
+      {/* <KeepAwake /> */}
     </View>
   );
 };

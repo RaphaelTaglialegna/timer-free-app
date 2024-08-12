@@ -43,11 +43,11 @@ export const styles = StyleSheet.create({
     textAlign: "center",
   },
   title: {
-    fontSize: 24, // Larger font size for title
+    fontSize: 24,
     color: "#FFF",
   },
   input: {
-    fontSize: 24, // Larger input text
+    fontSize: 24,
     color: "#FFF",
     marginBottom: 10,
   },
@@ -65,13 +65,11 @@ export const styles = StyleSheet.create({
     alignItems: "baseline",
     justifyContent: "center",
     backgroundColor: "#000000",
-    width: "100%",
     flexGrow: 1,
   },
   controlButtons: {
     display: "flex",
     width: "100%",
-
     flexDirection: "row",
     justifyContent: "space-around",
   },
@@ -87,8 +85,8 @@ export const timerOptions = {
     padding: 20,
   },
   text: {
-    fontSize: 120,
-    color: "#AF1717",
+    fontSize: 20,
+    color: "#ffffff",
     fontFamily: "DSEG14Classic",
   },
 };
@@ -108,17 +106,17 @@ export const timerStyles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     height: "fit-content",
-    padding: 20,
+    padding: 10,
     flexGrow: 1,
   },
   selectedText: {
-    fontSize: 120,
-    color: "#AF1717",
+    fontSize: 210,
+    color: "#ffffff",
     fontFamily: "DSEG14Classic",
   },
   colon: {
-    fontSize: 120,
-    color: "#AF1717",
+    fontSize: 190,
+    color: "#ffffff",
     fontFamily: "DSEG14Classic",
   },
   button: {
