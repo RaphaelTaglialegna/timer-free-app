@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableHighlight } from "react-native";
-import { timerStyles } from "../styles";
+import { timerStyles } from "../app/styles";
 import { Audio } from "expo-av";
 import KeepAwake from "react-native-keep-awake";
-import ScrollPicker from "react-native-picker-scrollview";
-import finalBuzzer from "../assets/audio/mixkit-basketball-buzzer-1647.wav";
-import nbaPiano from "../assets/audio/nba_audio.mp3";
-const generatePickerData = (maxValue) => {
+import ScrollPicker from "react-native-wheel-scrollview-picker";
+const finalBuzzer = require("../assets/audio/mixkit-basketball-buzzer-1647.wav");
+const nbaPiano = require("../assets/audio/nba_audio.mp3");
+const generatePickerData = (maxValue: number) => {
   return Array.from({ length: maxValue }, (_, index) =>
     String(index).padStart(2, "0")
   );
@@ -14,16 +14,23 @@ const generatePickerData = (maxValue) => {
 
 const pickerData = generatePickerData(60);
 
-const TimerComponent = ({ resetTimmerComponent }) => {
+interface IProps {
+  resetTimmerComponent: () => void;
+}
+
+const TimerComponent = ({ resetTimmerComponent }: IProps) => {
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
   const [isTimerStart, setIsTimerStart] = useState(false);
-  const [sound, setSound] = useState();
   const [lastTimer, setLastTimer] = useState(["00", "00"]);
   const [isMuteAudio, setIsMuteAudio] = useState(false);
+  // useEffect(() => {
+  //   KeepAwake.activate();
+  //   return () => KeepAwake.deactivate();
+  // }, []);
 
   useEffect(() => {
-    let interval = null;
+    let interval = undefined;
 
     if (isTimerStart) {
       if (minutes === "00" && seconds === "30") {
@@ -48,21 +55,17 @@ const TimerComponent = ({ resetTimmerComponent }) => {
     return () => clearInterval(interval);
   }, [isTimerStart, minutes, seconds]);
 
-  async function playSound(audio) {
+  async function playSound(audio: any) {
     if (isMuteAudio === true || !audio) {
       return;
     }
 
-    // const { sound: finalBuzzer } = await Audio.Sound.createAsync(
-    //   require("../assets/audio/mixkit-basketball-buzzer-1647.wav")
-    // );
     const { sound } = await Audio.Sound.createAsync(audio);
 
-    setSound(audio);
     await sound.playAsync();
   }
 
-  const handlePickerChange = (item, type) => {
+  const handlePickerChange = (item: string, type: "minutes" | "seconds") => {
     if (!isTimerStart) {
       if (type === "minutes") {
         setMinutes(item);
@@ -113,7 +116,7 @@ const TimerComponent = ({ resetTimmerComponent }) => {
               onValueChange={(data) => handlePickerChange(data, "minutes")}
               wrapperHeight={wrapperHeight}
               itemHeight={itemHeight}
-              wrapperColor="#000000"
+              wrapperBackground="#000000"
               key={`minutes-${minutes}`} // Forçar re-render
             />
             <Text style={timerStyles.colon}>:</Text>
@@ -126,7 +129,7 @@ const TimerComponent = ({ resetTimmerComponent }) => {
               onValueChange={(data) => handlePickerChange(data, "seconds")}
               wrapperHeight={wrapperHeight}
               itemHeight={itemHeight}
-              wrapperColor="#000000"
+              wrapperBackground="#000000"
               key={`seconds-${seconds}`} // Forçar re-render
             />
           </React.Fragment>
@@ -173,7 +176,7 @@ const TimerComponent = ({ resetTimmerComponent }) => {
           <Text style={timerStyles.buttonText}>RESET</Text>
         </TouchableHighlight>
       </View>
-      <KeepAwake />
+      {/* <KeepAwake /> */}
     </View>
   );
 };

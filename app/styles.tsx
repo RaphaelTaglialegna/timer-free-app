@@ -61,7 +61,7 @@ export const styles = StyleSheet.create({
   timerContainer: {
     width: "100%",
     display: "flex",
-    direction: "column",
+    flexDirection: "column",
     alignItems: "baseline",
     justifyContent: "center",
     backgroundColor: "#000000",
@@ -95,7 +95,7 @@ export const timerStyles = StyleSheet.create({
   timerContainer: {
     width: "100%",
     display: "flex",
-    direction: "row",
+    flexDirection: "column",
     alignItems: "baseline",
     justifyContent: "center",
     backgroundColor: "#000000",
@@ -105,7 +105,7 @@ export const timerStyles = StyleSheet.create({
     width: "100%",
     flexDirection: "row",
     justifyContent: "center",
-    height: "fit-content",
+    height: "auto",
     padding: 10,
     flexGrow: 1,
   },

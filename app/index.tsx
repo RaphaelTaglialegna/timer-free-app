@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useFonts } from "expo-font";
 import { SafeAreaView, StatusBar, Text, View } from "react-native";
-import TimerComponent from "./src/Timer";
-import StopwatchComponent from "./src/Stopwatch";
+import TimerComponent from "../components/Timer";
 import { styles } from "./styles";
 
 const App = () => {
@@ -10,14 +9,14 @@ const App = () => {
   const [isStopwatchVisible, setIsStopwatchVisible] = useState(false);
 
   const [fontsLoaded] = useFonts({
-    DSEG14Classic: require("./assets/fonts/DSEG14Classic-Regular.ttf"),
+    DSEG14Classic: require("../assets/fonts/DSEG14Classic-Regular.ttf"),
   });
 
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }
 
-  const toggleComponent = (componentName) => {
+  const toggleComponent = (componentName: string) => {
     if (componentName === "timer") {
       setIsTimerVisible(true);
       setIsStopwatchVisible(false);
@@ -58,7 +57,6 @@ const App = () => {
         {isTimerVisible && (
           <TimerComponent resetTimmerComponent={resetTimmerComponent} />
         )}
-        {isStopwatchVisible && <StopwatchComponent />}
       </SafeAreaView>
     </>
   );
